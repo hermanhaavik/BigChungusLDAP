@@ -32,7 +32,9 @@ def start_fake_ldap_server():
         server = ldap.initialize("ldap://localhost:389")
 
         # Bind as admin (modify this based on your setup)
-        server.simple_bind_s("cn=admin,dc=example,dc=com", "password")
+        server.simple_bind_s("cn=admin,dc=nodomain", "admin")
+
+
 
         # Add fake users (modify as needed)
         for i in range(1, 6):
