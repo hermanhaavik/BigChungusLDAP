@@ -20,7 +20,7 @@ def custom_mode():
 
     # Update an existing file with the LDIF data (replace this with your logic)
     existing_file_path = "openldap/data/bootstrap.ldif"
-    with open(existing_file_path, 'a') as existing_file:
+    with open(existing_file_path, 'w') as existing_file:
         existing_file.write(ldif_data)
 
     print(f"Data from '{ldif_file_path}' has been added to '{existing_file_path}'.")
