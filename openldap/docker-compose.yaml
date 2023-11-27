@@ -13,7 +13,7 @@ services:
     ports:
       - 389:389
     volumes:
-      - ./data/bootstrap.ldif:/container/service/slapd/assets/config/bootstrap/ldif/50-bootstrap.ldif
+      - ./data/generated_data.ldif:/container/service/slapd/assets/config/bootstrap/ldif/50-bootstrap.ldif
 
   ldap_server_admin:
     image: osixia/phpldapadmin:0.7.2

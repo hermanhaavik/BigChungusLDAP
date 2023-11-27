@@ -1,0 +1,41 @@
+dn: cn=user1,dc=example,dc=org
+changetype: add
+objectclass: inetOrgPerson
+cn: user1
+givenname: user1
+sn: User1
+displayname: User1 User
+mail: user1@gmail.com
+uid: user1
+userpassword: user1_pass
+
+dn: cn=user2,dc=example,dc=org
+changetype: add
+objectclass: inetOrgPerson
+cn: user2
+givenname: user2
+sn: User2
+displayname: User2 User
+mail: user2@gmail.com
+uid: user2
+userpassword: user2_pass
+
+dn: ou=Groups,dc=example,dc=org
+changetype: add
+objectclass: organizationalUnit
+ou: Groups
+
+dn: cn=Group2,ou=Groups,dc=example,dc=org
+changetype: add
+cn: Group2
+objectclass: groupOfUniqueNames
+uniqueMember: cn=user1,dc=example,dc=org
+uniqueMember: cn=user2,dc=example,dc=org
+
+dn: cn=Group3,ou=Groups,dc=example,dc=org
+changetype: add
+cn: Group3
+objectclass: groupOfUniqueNames
+uniqueMember: cn=user1,dc=example,dc=org
+uniqueMember: cn=user2,dc=example,dc=org
+

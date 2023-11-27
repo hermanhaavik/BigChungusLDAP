@@ -1,4 +1,12 @@
+import os
 import random
+
+def get_openldap_data_directory():
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    # Set the data directory path outside of the generator directory
+    data_directory = os.path.join(script_directory, "..", "data")
+    output_ldif_file = os.path.join(data_directory, "generated_data.ldif")
+    return output_ldif_file
 
 def generate_group_entry():
     ldif_content = "dn: ou=Groups,dc=example,dc=org\n"
@@ -73,7 +81,7 @@ num_users = int(input("Enter the number of users: "))
 ldif_content = generate_ldif_file(num_groups, num_users)
 
 # Save LDIF content to a file
-with open("output.ldif", "w") as ldif_file:
+with open(get_openldap_data_directory(), "w") as ldif_file:
     ldif_file.write(ldif_content)
 
 print("LDIF file generated successfully.")
