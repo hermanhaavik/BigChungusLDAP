@@ -1,5 +1,8 @@
 import os
 import random
+from faker import Faker
+
+fake = Faker()
 
 def get_openldap_data_directory():
     script_directory = os.path.dirname(os.path.abspath(__file__))
@@ -36,17 +39,25 @@ def generate_group_ldif(group_name, user_dn_list):
     return ldif_content
 
 def generate_user_ldif(user_name):
+
+    name = fake.name()
+    firstName = name.split(" ")[0]
+    lastName = name.split(" ")[1]
+
     user_dn = f"cn={user_name},dc=example,dc=org"
     ldif_content = f"dn: {user_dn}\n"
     ldif_content += "changetype: add\n"
     ldif_content += "objectclass: inetOrgPerson\n"
     ldif_content += f"cn: {user_name}\n"
-    ldif_content += f"givenname: {user_name}\n"
-    ldif_content += f"sn: {user_name.capitalize()}\n"
-    ldif_content += f"displayname: {user_name.capitalize()} User\n"
-    ldif_content += f"mail: {user_name}@gmail.com\n"
-    ldif_content += f"uid: {user_name}\n"
-    ldif_content += f"userpassword: {user_name}_pass\n"
+    ldif_content += f"givenname: {firstName}\n"  # First name
+    ldif_content += f"sn: {lastName}\n"  # Last name
+    ldif_content += f"displayname: {name}\n"  # Full name
+    ldif_content += f"mail: {fake.email()}\n"  # Email
+    ldif_content += f"uid: {fake.user_name()}\n"
+    ldif_content += f"userpassword: {fake.password()}\n"
+    ldif_content += f"o: {fake.company()}\n"  # Organization
+    ldif_content += f"title: {fake.job()}\n"  # Title
+    ldif_content += f"street: {fake.street_address()}\n"  # Street Address
 
     ldif_content += "\n"  # Add one line of space after the user entry
     return ldif_content, user_dn

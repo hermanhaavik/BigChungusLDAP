@@ -2,23 +2,43 @@ dn: cn=user1,dc=example,dc=org
 changetype: add
 objectclass: inetOrgPerson
 cn: user1
-givenname: user1
-sn: User1
-displayname: User1 User
-mail: user1@gmail.com
-uid: user1
-userpassword: user1_pass
+givenname: Melissa
+sn: Welch
+displayname: Melissa Welch
+mail: casey60@example.org
+uid: abarrett
+userpassword: 9mhxHnTU!m
+o: Rodriguez, Everett and Roberts
+title: Electronics engineer
+street: 7743 Stuart Burgs
 
 dn: cn=user2,dc=example,dc=org
 changetype: add
 objectclass: inetOrgPerson
 cn: user2
-givenname: user2
-sn: User2
-displayname: User2 User
-mail: user2@gmail.com
-uid: user2
-userpassword: user2_pass
+givenname: Whitney
+sn: Schultz
+displayname: Whitney Schultz
+mail: john67@example.com
+uid: kelly02
+userpassword: q+ylm8Dv*7
+o: Acosta, Montes and Douglas
+title: Production assistant, television
+street: 854 Karen Valleys
+
+dn: cn=user3,dc=example,dc=org
+changetype: add
+objectclass: inetOrgPerson
+cn: user3
+givenname: Steven
+sn: Williams
+displayname: Steven Williams
+mail: drush@example.org
+uid: millergeorge
+userpassword: RxVXe95f+4
+o: Merritt, Snyder and Lozano
+title: Metallurgist
+street: 1913 Veronica Plaza Suite 100
 
 dn: ou=Groups,dc=example,dc=org
 changetype: add
@@ -29,6 +49,7 @@ dn: cn=Group2,ou=Groups,dc=example,dc=org
 changetype: add
 cn: Group2
 objectclass: groupOfUniqueNames
+uniqueMember: cn=user3,dc=example,dc=org
 uniqueMember: cn=user1,dc=example,dc=org
 uniqueMember: cn=user2,dc=example,dc=org
 
@@ -37,5 +58,4 @@ changetype: add
 cn: Group3
 objectclass: groupOfUniqueNames
 uniqueMember: cn=user1,dc=example,dc=org
-uniqueMember: cn=user2,dc=example,dc=org
 
