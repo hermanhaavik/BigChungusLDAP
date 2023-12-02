@@ -1,23 +1,30 @@
 #!/bin/bash
-echo "Starting script"
-# Build the Docker image
-docker build -t ldap-server .
-echo "Docker image built"
 
-# Run the Docker container, exposing port 389
-docker run -d -p 389:389 --name ldap-container ldap-server
-echo "Docker container is running, exposing port  389"
+# Run your Python script
+echo "Running Python script..."
+python3 FileDecider.py
 
-# Wait for the LDAP server to start
-echo "Waiting for LDAP server to start..."
-sleep 10
 
-echo "Trying to run the python script"
-# Run the Python script within the Docker container
-docker exec ldap-container /usr/bin/env /usr/local/bin/python /app/PythonLDAP.py
-echo "Python script is running"
+# Check if the Python script was successful
+if [ $? -eq 0 ]; then
+    echo "Python script executed successfully."
+    sleep 10
 
-#
-# Cleanup: Stop and remove the Docker container
-#docker stop ldap-container
-#docker rm ldap-container
+    # Run Docker Compose
+    echo "Starting Docker Compose..."
+    docker-compose -f openldap/docker-compose.yaml up -d
+
+
+    # Check if Docker Compose was successful
+    if [ $? -eq 0 ]; then
+        echo "Docker Compose started successfully."
+    else
+        echo "Error: Failed to start Docker Compose."
+        exit 1
+    fi
+else
+    echo "Error: Failed to execute Python script."
+    exit 1
+fi
+
+exit 0

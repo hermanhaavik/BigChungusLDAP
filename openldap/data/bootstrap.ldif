@@ -9,6 +9,17 @@ mail: developer@gmail.com
 uid: developer
 userpassword: developer_pass
 
+dn: cn=tester,dc=example,dc=org
+changetype: add
+objectclass: inetOrgPerson
+cn: tester
+givenname: tester
+sn: Tester
+displayname: Tester user
+mail: tester@gmail.com
+uid: tester
+userpassword: tester_pass
+
 dn: cn=maintainer,dc=example,dc=org
 changetype: add
 objectclass: inetOrgPerson

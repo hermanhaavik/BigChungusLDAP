@@ -1,0 +1,50 @@
+dn: c
+changetype: add
+objectclass: inetOrgPerson
+cn: user1
+givenname: GivenName_user1
+sn: Surname_user1
+displayname: DisplayName_user1
+mail: user1@example.com
+uid: user1
+userpassword: user1_pass
+
+dn: c
+changetype: add
+objectclass: inetOrgPerson
+cn: user2
+givenname: GivenName_user2
+sn: Surname_user2
+displayname: DisplayName_user2
+mail: user2@example.com
+uid: user2
+userpassword: user2_pass
+
+dn: c
+changetype: add
+objectclass: inetOrgPerson
+cn: user3
+givenname: GivenName_user3
+sn: Surname_user3
+displayname: DisplayName_user3
+mail: user3@example.com
+uid: user3
+userpassword: user3_pass
+
+dn: c
+changetype: add
+objectclass: organizationalUnit
+objectclass: groupOfUniqueNames
+cn: Admins
+ou: Admins_OU
+uniqueMember: cn=admin_gh,ou=Users,dc=example,dc=org
+
+dn: c
+changetype: add
+objectclass: organizationalUnit
+objectclass: groupOfUniqueNames
+cn: Maintainers
+ou: Maintainers_OU
+uniqueMember: cn=maintainer,ou=Users,dc=example,dc=org
+uniqueMember: cn=developer,ou=Users,dc=example,dc=org
+
