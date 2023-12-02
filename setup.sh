@@ -10,10 +10,29 @@ if [ $? -eq 0 ]; then
     echo "Python script executed successfully."
     sleep 10
 
-    # Run Docker Compose
-    echo "Starting Docker Compose..."
-    docker-compose -f openldap/docker-compose.yaml up -d
 
+    # Prompt user for LDAP admin password
+    read -sp "Enter the LDAP admin password (default is admin_pass): " ldap_admin_password
+    ldap_admin_password=${ldap_admin_password:-admin_pass}
+
+    # Export the LDAP admin password as an environment variable
+    export LDAP_ADMIN_PASSWORD=$ldap_admin_password
+
+    # Prompt user for input
+    read -p "Enter the host port for LDAP server (default is 389): " ldap_host_port
+    ldap_host_port=${ldap_host_port:-389}
+
+    
+
+    # Export the host and container ports as environment variables
+    export LDAP_HOST_PORT=$ldap_host_port
+    
+
+    # Run Docker Compose with environment variables
+    echo "Starting Docker Compose..."
+    LDAP_ADMIN_PASSWORD=$LDAP_ADMIN_PASSWORD LDAP_HOST_PORT=$LDAP_HOST_PORT docker-compose -f openldap/docker-compose.yaml up -d
+    
+ 
 
     # Check if Docker Compose was successful
     if [ $? -eq 0 ]; then
