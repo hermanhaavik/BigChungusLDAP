@@ -1,9 +1,20 @@
 import os
 import shutil
+import subprocess
 
 def regular_mode():
     print("Running in regular mode...")
-    # Add your regular mode logic here
+    script_to_run = 'openldap/generator/ldapGenerator.py'
+
+    with open(script_to_run, 'r') as file:
+        script_code = file.read()
+
+    local_namespace = {'__file__': script_to_run}
+    try:
+        exec(script_code, local_namespace)
+        print(f'The script {script_to_run} executed successfully.')
+    except Exception as e:
+        print(f'The script {script_to_run} raised an exception: {e}')
 
 def custom_mode():
     print("Running in custom mode...")
