@@ -8,7 +8,7 @@ def get_openldap_data_directory():
     script_directory = os.path.dirname(os.path.abspath(__file__))
     # Set the data directory path outside of the generator directory
     data_directory = os.path.join(script_directory, "..", "data")
-    output_ldif_file = os.path.join(data_directory, "generated_data.ldif")
+    output_ldif_file = os.path.join(data_directory, "bootstrap.ldif")
     return output_ldif_file
 
 def generate_group_entry():
