@@ -2,85 +2,43 @@ dn: cn=user1,dc=example,dc=org
 changetype: add
 objectclass: inetOrgPerson
 cn: user1
-givenname: Sean
-sn: Kim
-displayname: Sean Kim
-mail: laurenmcguire@example.org
-uid: ashley23
-userpassword: (4qM73KiDY
-o: Gill-Higgins
-title: Minerals surveyor
-street: 42796 Clark Alley Apt. 336
+givenname: Carol
+sn: Webb
+displayname: Carol Webb
+mail: colin64@example.net
+uid: samueladams
+userpassword: !6TY^iej#5
+o: Rodriguez LLC
+title: Surveyor, insurance
+street: 837 Allison Knoll
 
 dn: cn=user2,dc=example,dc=org
 changetype: add
 objectclass: inetOrgPerson
 cn: user2
-givenname: Dawn
-sn: Torres
-displayname: Dawn Torres
-mail: johnathan70@example.com
-uid: jamesschwartz
-userpassword: 9w4P1B4n$4
-o: Powell Ltd
-title: Seismic interpreter
-street: 2331 Carpenter Pines Suite 701
+givenname: Lindsey
+sn: Smith
+displayname: Lindsey Smith
+mail: ronaldesparza@example.com
+uid: brownsheryl
+userpassword: (65kFPwaSm
+o: Mclaughlin LLC
+title: Town planner
+street: 78167 Jeffrey Mount
 
 dn: cn=user3,dc=example,dc=org
 changetype: add
 objectclass: inetOrgPerson
 cn: user3
-givenname: Daniel
-sn: Espinoza
-displayname: Daniel Espinoza
-mail: whiteashley@example.net
-uid: amy24
-userpassword: V$1yNaKm)Q
-o: Fisher, Lee and Lopez
-title: Insurance risk surveyor
-street: 427 Elizabeth Skyway
-
-dn: cn=user4,dc=example,dc=org
-changetype: add
-objectclass: inetOrgPerson
-cn: user4
-givenname: John
-sn: Mitchell
-displayname: John Mitchell
-mail: michael92@example.com
-uid: nunderwood
-userpassword: 02z45P@d+7
-o: Velasquez, Vega and Hardin
-title: Illustrator
-street: 849 Jason Locks
-
-dn: cn=user5,dc=example,dc=org
-changetype: add
-objectclass: inetOrgPerson
-cn: user5
-givenname: Meredith
-sn: Thomas
-displayname: Meredith Thomas
-mail: melissahiggins@example.com
-uid: kelly35
-userpassword: _72ABst(78
-o: Garza Ltd
-title: Science writer
-street: 47537 Richardson Bridge
-
-dn: cn=user6,dc=example,dc=org
-changetype: add
-objectclass: inetOrgPerson
-cn: user6
-givenname: Anna
-sn: Torres
-displayname: Anna Torres
-mail: camerondawson@example.com
-uid: garrettmarquez
-userpassword: 2M@3sgRo@*
-o: Salas, Nguyen and Johnson
-title: Programme researcher, broadcasting/film/video
-street: 76693 Campbell Circle
+givenname: Sandra
+sn: Gibson
+displayname: Sandra Gibson
+mail: xmiller@example.net
+uid: mmyers
+userpassword: lI8)E!Ao*V
+o: Castro Inc
+title: Data scientist
+street: 63810 Davis Fords Suite 288
 
 dn: ou=Groups,dc=example,dc=org
 changetype: add
@@ -91,13 +49,7 @@ dn: cn=Group2,ou=Groups,dc=example,dc=org
 changetype: add
 cn: Group2
 objectclass: groupOfUniqueNames
-uniqueMember: cn=user6,dc=example,dc=org
-
-dn: cn=Group3,ou=Groups,dc=example,dc=org
-changetype: add
-cn: Group3
-objectclass: groupOfUniqueNames
-uniqueMember: cn=user5,dc=example,dc=org
 uniqueMember: cn=user3,dc=example,dc=org
-uniqueMember: cn=user4,dc=example,dc=org
+uniqueMember: cn=user1,dc=example,dc=org
+uniqueMember: cn=user2,dc=example,dc=org
 
