@@ -1,6 +1,4 @@
 import os
-import shutil
-import subprocess
 
 def regular_mode():
     print("Running in regular mode...")
@@ -36,19 +34,15 @@ def custom_mode():
 
     print(f"Data from '{ldif_file_path}' has been added to '{existing_file_path}'.")
 
-def main():
-    print("Choose mode:")
-    print("1. Regular Mode")
-    print("2. Custom Mode")
+print("Choose mode:")
+print("1. Regular Mode")
+print("2. Custom Mode")
 
-    choice = input("Enter your choice (1 or 2): ")
+choice = input("Enter your choice (1 or 2): ")
 
-    if choice == "1":
-        regular_mode()
-    elif choice == "2":
-        custom_mode()
-    else:
-        print("Invalid choice. Please enter 1 or 2.")
-
-if __name__ == "__main__":
-    main()
+if choice == "1":
+    regular_mode()
+elif choice == "2":
+    custom_mode()
+else:
+    print("Invalid choice. Please enter 1 or 2.")

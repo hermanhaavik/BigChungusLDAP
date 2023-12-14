@@ -9,10 +9,7 @@ if %errorlevel% neq 0 (
 )
 
 rem Install project dependencies using pip
-rem Replace the following command with the actual command for your project
 pip install -r requirements.txt
-
-rem Additional commands for setting up the project, if needed
 
 rem Print a message indicating that the script has completed
 echo Project dependencies installed successfully!

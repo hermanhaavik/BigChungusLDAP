@@ -8,10 +8,7 @@ if [ ! command -v pip3 &> /dev/null ]; then
 fi
 
 # Install project dependencies using pip
-# Replace the following command with the actual command for your project
 pip3 install -r requirements.txt
-
-# Additional commands for setting up the project, if needed
 
 # Print a message indicating that the script has completed
 echo "Project dependencies installed successfully!"
