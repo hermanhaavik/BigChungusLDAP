@@ -1,5 +1,22 @@
 @echo off
 
+rem Check for the presence of pip
+where pip >nul 2>nul
+if %errorlevel% neq 0 (
+  echo pip not found, installing...
+  rem Install pip (Python package manager)
+  python -m ensurepip --default-pip
+)
+
+rem Install project dependencies using pip
+rem Replace the following command with the actual command for your project
+pip install -r requirements.txt
+
+rem Additional commands for setting up the project, if needed
+
+rem Print a message indicating that the script has completed
+echo Project dependencies installed successfully!
+
 rem Stop existing Docker Compose containers
 echo Stopping existing Docker Compose containers...
 docker-compose -f openldap/docker-compose.yaml down

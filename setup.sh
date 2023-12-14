@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# Check for the presence of pip
+if [ ! command -v pip3 &> /dev/null ]; then
+  echo "pip not found, installing..."
+  # Install pip (Python package manager)
+  sudo apt-get install -y python3-pip
+fi
+
+# Install project dependencies using pip
+# Replace the following command with the actual command for your project
+pip3 install -r requirements.txt
+
+# Additional commands for setting up the project, if needed
+
+# Print a message indicating that the script has completed
+echo "Project dependencies installed successfully!"
+
 # Stop existing Docker Compose containers
 echo "Stopping existing Docker Compose containers..."
 docker-compose -f openldap/docker-compose.yaml down
