@@ -8,7 +8,7 @@ To run this project you need a working version of Python. Python can be download
 
 ## Usage
 
-1. Navigate to the Project folder (BigChungusLDAP) using your command 2.  
+1. Navigate to the Project folder (BigChungusLDAP).  
 
 ### Running the Setup Script
 
@@ -29,17 +29,22 @@ This script will stop existing Docker containers and prompt you to choose betwee
 
 **Regular Mode Screenshot**
 
+![Choosing modes](images/choose_mode.png)
+![Choosing amount of users and groups](images/added_users_groups.png)
+
+
+
 3. The ldapGenerator.py script generates an LDIF file containing the specified group and user entries, utilizing the Faker library to add auto-generated data to user entries.
 
-**LDAP Generator Screenshot**
+
 
 4. Set the LDAP admin password and the host port for the LDAP server when prompted.
+![Inputting admin varibales and port configurations](images/set_password.png)
 
-**Setup Screenshot**
 
 5. The docker-compose.yaml script is executed, providing the LDIF file to the slapd service, which configures the LDAP server.
 
-**Docker Compose Screenshot**
+![Building...](images/building.png)
 
 #### Custom Mode
 
