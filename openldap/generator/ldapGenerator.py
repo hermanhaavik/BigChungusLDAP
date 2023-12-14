@@ -6,7 +6,6 @@ fake = Faker()
 
 def get_openldap_data_directory():
     script_directory = os.path.dirname(os.path.abspath(__file__))
-    # Set the data directory path outside of the generator directory
     data_directory = os.path.join(script_directory, "..", "data")
     output_ldif_file = os.path.join(data_directory, "bootstrap.ldif")
     return output_ldif_file
@@ -49,8 +48,8 @@ def generate_user_ldif(user_name):
     ldif_content += "changetype: add\n"
     ldif_content += "objectclass: inetOrgPerson\n"
     ldif_content += f"cn: {user_name}\n"
-    ldif_content += f"givenname: {firstName}\n"  # First name
-    ldif_content += f"sn: {lastName}\n"  # Last name
+    ldif_content += f"givenname: {firstName}\n" 
+    ldif_content += f"sn: {lastName}\n"  
     ldif_content += f"displayname: {name}\n"  # Full name
     ldif_content += f"mail: {fake.email()}\n"  # Email
     ldif_content += f"uid: {fake.user_name()}\n"
